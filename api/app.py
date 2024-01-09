@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from api.routes.app_routes import app_routes
-from api.utils.first_init import FirstInit
+# from api.utils.first_init import FirstInit
 
 
 
