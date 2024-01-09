@@ -32,10 +32,12 @@ def get_popularity_recommends(num_recommendations, user_id):
         })), 200
 
     except Exception as e:
+        error_message = f"Error: {str(e)}"
         return make_response(jsonify({
-            "message": "something went wrong, we're working to solve it",
-            "success": False
-        })), 500
+            "message": "Something went wrong. We're working to solve it.",
+            "success": False,
+            "error": error_message
+        }), 500)
 
 @extract_user_id_params
 @extract_num_recommends_params
