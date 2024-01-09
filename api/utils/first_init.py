@@ -21,7 +21,7 @@ class FirstInit:
 
     def check_requirements(self):
         for req in self.get_requirements():
-            spec = importlib.util.find_spec(req[0])
+            spec = importlib.util.find_spec(req[0]
             if spec is None:
                 print(f"{req[0]!r} not in sys.modules")
                 print(f'wait {req[0]}=={req[1]}  will downloaded now !!!')
@@ -42,12 +42,4 @@ class FirstInit:
                     print(f"{req[0]!r} already in sys.modules")
 
     # get openai_key from secret path
-    def get_api_key(self):
-        api_key = "null"
-        with open("api_key.yaml", "r") as stream:
-            try:
-                api_key = yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                api_key = exc
-
-        return api_key
+   
